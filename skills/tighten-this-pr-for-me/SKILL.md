@@ -18,6 +18,8 @@ The request this skill encodes:
 
 Also read the repo's PR template if one exists (`.github/PULL_REQUEST_TEMPLATE.md`, `.github/pull_request_template.md`, or `.github/PULL_REQUEST_TEMPLATE/`).
 
+Use your agent's file-reading or shell tools for local files. If `gh` is unavailable, use a connected GitHub tool to read the same live PR body, changed files, and diff, or to update the body when asked.
+
 ## Rules
 
 1. **Template first.** Keep the template's headings, checkboxes, and HTML comments exactly as they are, because automation may read them. Fill each section.
@@ -33,7 +35,7 @@ Also read the repo's PR template if one exists (`.github/PULL_REQUEST_TEMPLATE.m
 
 1. Read the inputs and the template.
 2. Draft the body against the rules.
-3. Always run the draft through the `no-ai-slop` skill in edit mode, even when it already looks clean, and apply its edits.
+3. Always run the draft through the `no-ai-slop` skill in edit mode, even when it already looks clean, and apply its edits. Use the agent's skill loader when available. Otherwise, read `../no-ai-slop/SKILL.md` relative to this skill's installed directory and follow it directly. If it is missing, ask the user to install the bundled `no-ai-slop` skill before completing the rewrite; do not silently skip this pass.
 4. Check the word limit again after the edit.
 5. Return the final body in a fenced block with nothing before it. After the block, add a single line that starts with "Cut:" and lists what you removed in under 20 words (for example, "Cut: file walkthrough, background paragraph, test counts"). Add nothing else.
 6. Do not edit the PR unless the user asks. When they ask, fetch the live body again, then run `gh pr edit <n> --body-file <file>`.
