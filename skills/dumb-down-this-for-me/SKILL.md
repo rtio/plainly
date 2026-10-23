@@ -26,7 +26,7 @@ State only what the source says. Label anything else as outside knowledge.
 
 > Ask your LLM to explain something in ASD-STE100, it's a controlled language specification originally developed for aerospace maintenance documentation. [...] Sometimes I've tried to soften it a bit e.g. ask for "80% of the way to ASD-STE100" because the spec is quite stringent.
 
-Write the explanation "<percent>% of the way to ASD-STE100". At 100, apply every rule below. Below 100, soften the rules in proportion. The post gives no finer definition.
+Write the explanation "<percent>% of the way to ASD-STE100". At 100, apply every rule below. Below 100, soften the rules in proportion. The post gives no finer definition. Return only the explanation, with no note about how you applied the rules.
 
 Rules, from the STE reference sheet attached to the post:
 
