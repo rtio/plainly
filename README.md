@@ -1,6 +1,6 @@
 # plainly
 
-Claude Code skills for making technical text easier to read, with evals.
+Skills for making technical text easier to read, for Codex, Claude Code, Cursor, Gemini CLI, GitHub Copilot, OpenCode, and Windsurf. Includes Claude Code evals.
 
 ## Skills
 
@@ -42,6 +42,46 @@ It never edits the PR on GitHub unless you ask.
 
 ## Install
 
+### Codex and other agents
+
+The skills use the [Agent Skills format](https://agentskills.io/specification). With Node.js 22.20 or later, run the [skills CLI](https://github.com/vercel-labs/skills) from your project and choose your agents:
+
+```sh
+npx skills@latest add rtio/plainly
+```
+
+Install all three skills for Codex across your projects:
+
+```sh
+npx skills@latest add rtio/plainly --skill '*' --agent codex --global
+```
+
+Or install them for several agents in the current project:
+
+```sh
+npx skills@latest add rtio/plainly --skill '*' \
+  --agent codex claude-code cursor gemini-cli github-copilot opencode windsurf
+```
+
+Add `--global` for a user-wide install or `--yes` to skip installer prompts. To check what is available before installing:
+
+```sh
+npx skills@latest add rtio/plainly --list
+```
+
+If selecting individual skills, install `no-ai-slop` with `tighten-this-pr-for-me`:
+
+```sh
+npx skills@latest add rtio/plainly --agent codex \
+  --skill tighten-this-pr-for-me no-ai-slop
+```
+
+Ask your agent to use a skill by name, for example: "Use dumb-down-this-for-me to explain this file." In Codex, you can also use `$dumb-down-this-for-me` or `$tighten-this-pr-for-me`. The slash-command examples above are for Claude Code; invocation syntax varies by agent.
+
+Each agent needs file access for local sources and generated artifacts, and a browser, fetch tool, or connector for URLs. PR access needs `gh` or a GitHub connector. Publishing and video generation still need the tools listed above.
+
+### Claude Code plugin
+
 ```
 /plugin marketplace add rtio/plainly
 /plugin install plainly@plainly
@@ -51,7 +91,7 @@ Installed as a plugin, the skills are namespaced: `/plainly:dumb-down-this-for-m
 
 ## Evals
 
-The `evals/` folder has six cases for `claude plugin eval`. Each case runs with and without the plugin, so the report shows what the skills change.
+The `evals/` folder has six cases for `claude plugin eval`. Each case runs with and without the plugin, so the report shows what the skills change. These are Claude Code behavioral evals; they do not evaluate other agents.
 
 ```
 claude plugin eval . --allow-tools Write

@@ -18,7 +18,7 @@ Explain a technical source at one of four levels. The levels come from Andrej Ka
 
 ## Read the source first
 
-Read the whole source with the tool that reaches it: WebFetch for a public URL, Read for a file, or an MCP or CLI tool for private links. WebFetch paraphrases, so fetch a second time for exact names, numbers, and dates. x.com returns HTTP 402. For x.com, curl `https://api.fxtwitter.com/<user>/status/<id>` and read `.tweet.text` and `.tweet.media`.
+Read the whole source with the tools available in your agent: a browser or fetch tool for a public URL, a file-reading tool or shell for a file, or an authenticated connector, MCP, or CLI tool for private links. If a tool returns a summary, retrieve the original text to verify exact names, numbers, and dates. If a public x.com post cannot be fetched directly, fetch `https://api.fxtwitter.com/<user>/status/<id>` and read `.tweet.text` and `.tweet.media`.
 
 State only what the source says. Label anything else as outside knowledge.
 
