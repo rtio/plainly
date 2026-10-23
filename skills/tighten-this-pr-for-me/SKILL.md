@@ -21,21 +21,21 @@ Also read the repo's PR template if one exists (`.github/PULL_REQUEST_TEMPLATE.m
 ## Rules
 
 1. **Template first.** Keep the template's headings, checkboxes, and HTML comments exactly as they are, because automation may read them. Fill each section.
-2. **Say what changed and why.** Each prose section gets 1-3 plain sentences. Write about 60 words of your own prose and never more than 100. Template text, checklists, code, and reference lines do not count.
+2. **Say what changed and why.** Each prose section gets 1-3 plain sentences; count them before you return. Write about 60 words of your own prose and never more than 100. Template text, checklists, code, and reference lines do not count.
 3. **Not overly descriptive.** Do not walk through the diff file by file. Do not explain mechanisms the diff already shows. The reviewer reads the diff.
 4. **Not overly informative.** Cut background history, incident retelling, alternatives considered, tool or validator output, counts that will drift, and filler such as "No linked issue" or "N/A".
 5. **Natural and neutral.** Use plain declarative sentences. No verdicts, no selling, no loaded words such as "robust", "crucial", "backwards", or "seamless". Do not open with "This PR introduces".
 6. **Keep the substance.** Every issue reference, ID, version, flag name, and user-visible behavior change stays. Keep the repo's `Closes`/`Fixes`/`Refs` style.
-7. **Testing steps are short and concrete.** For copy-only or docs-only changes, the step is "Read the diff."
+7. **Testing steps are short and concrete.** For copy-only or docs-only changes, replace all test steps with the single line "Read the diff.", even when the original lists more.
 8. **Plain formatting.** No bold lead-ins on bullets, no emoji, no headings beyond the template's.
 
 ## Workflow
 
 1. Read the inputs and the template.
 2. Draft the body against the rules.
-3. Run the draft through the `no-ai-slop` skill in edit mode and apply its edits.
+3. Always run the draft through the `no-ai-slop` skill in edit mode, even when it already looks clean, and apply its edits.
 4. Check the word limit again after the edit.
-5. Return the final body in a fenced block, then one line naming what you cut (for example, "Cut: file walkthrough, background paragraph").
+5. Return the final body in a fenced block with nothing before it. After the block, add a single line that starts with "Cut:" and lists what you removed in under 20 words (for example, "Cut: file walkthrough, background paragraph, test counts"). Add nothing else.
 6. Do not edit the PR unless the user asks. When they ask, fetch the live body again, then run `gh pr edit <n> --body-file <file>`.
 
 ## Example
