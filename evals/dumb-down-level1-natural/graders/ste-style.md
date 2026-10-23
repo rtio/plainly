@@ -3,4 +3,4 @@ type: llm
 weight: 1
 ---
 
-The explanation reads as ASD-STE100 softened to about 80%: short sentences (nearly all 25 words or fewer), active voice, one idea per sentence, articles kept, vertical lists for sets or sequences, no -ing verb forms outside technical names, and the same term used for the same thing throughout. Technical names such as PgBouncer and max_prepared_statements are allowed. Fail if it reads like ordinary prose with long, multi-clause sentences.
+Sentence length and -ing forms are checked elsewhere; ignore them. Judge only these points. The explanation uses active voice, one idea per sentence, and keeps articles ("the", "a"). It uses the same term for the same thing throughout. Headings, bold, lists, and code names such as max_prepared_statements are fine. Fail only if the text reads like ordinary dense prose rather than a controlled, simplified style.
