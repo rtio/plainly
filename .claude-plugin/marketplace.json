@@ -1,0 +1,15 @@
+{
+  "name": "plainly",
+  "description": "Skills for making technical text easier to read.",
+  "owner": {
+    "name": "Rafael Meneses",
+    "url": "https://github.com/rtio"
+  },
+  "plugins": [
+    {
+      "name": "plainly",
+      "source": "./",
+      "description": "Explain a technical source at four levels (ASD-STE100 writing, diagram, HTML page, explainer video) and tighten pull request descriptions."
+    }
+  ]
+}

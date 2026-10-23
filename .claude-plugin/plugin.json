@@ -1,0 +1,13 @@
+{
+  "name": "plainly",
+  "version": "0.1.0",
+  "description": "Skills that make technical text easier to read: explain a source at four levels (ASD-STE100 writing, diagram, HTML page, explainer video) and tighten pull request descriptions.",
+  "author": {
+    "name": "Rafael Meneses",
+    "url": "https://github.com/rtio"
+  },
+  "homepage": "https://github.com/rtio/plainly",
+  "repository": "https://github.com/rtio/plainly",
+  "license": "MIT",
+  "keywords": ["writing", "ste", "asd-ste100", "explainer", "pull-request", "no-ai-slop"]
+}
