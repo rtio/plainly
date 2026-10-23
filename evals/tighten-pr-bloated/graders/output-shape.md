@@ -3,4 +3,4 @@ type: llm
 weight: 1
 ---
 
-The response gives the rewritten body in a fenced code block, followed by a short note naming what was cut. It does not claim to have edited the pull request on GitHub.
+The response starts with the rewritten body in a fenced code block. After the block comes a single short line that starts with "Cut:" and lists what was removed. There is no other commentary. The response does not claim to have edited the pull request on GitHub.
